@@ -1,0 +1,42 @@
+Global Styles
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Flexbox layout for the Home page */
+.home-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  text-align: center;
+}
+
+.quiz-card {
+  width: 30%;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+/* Other styles for forms, quiz pages, etc. */
+
+/* Sample styles for result page */
+.result-container {
+    padding: 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#score, #percentage, #combinedScore, #combinedPercentage {
+    font-size: 18px;
+    margin-top: 10px;
+}
