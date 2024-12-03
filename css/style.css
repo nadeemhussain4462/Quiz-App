@@ -1,42 +1,36 @@
-Global Styles
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
-}
-
-/* Flexbox layout for the Home page */
-.home-container {
   display: flex;
-  justify-content: space-around;
-  padding: 20px;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f9;
 }
 
-.quiz-card {
+.auth-container, .home-container, .quiz-container, .result-container {
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.quiz-cards {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.card {
   width: 30%;
   padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: #007BFF;
+  color: white;
+  border-radius: 5px;
   cursor: pointer;
-  border-radius: 10px;
-}
-
-/* Other styles for forms, quiz pages, etc. */
-
-/* Sample styles for result page */
-.result-container {
-    padding: 20px;
-    text-align: center;
-}
-
-h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-#score, #percentage, #combinedScore, #combinedPercentage {
-    font-size: 18px;
-    margin-top: 10px;
+  text-align: center;
 }
