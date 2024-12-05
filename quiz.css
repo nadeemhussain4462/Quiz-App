@@ -1,21 +1,27 @@
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    text-align: center;
   }
   
   .quiz-wrapper {
-    width: 400px;
+    width: 90%;
+    max-width: 500px;
     padding: 20px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
   }
   
   #question-container {
@@ -29,7 +35,7 @@ body {
   button {
     padding: 10px 20px;
     font-size: 16px;
-    background: #00d2ff;
+    background: #ff758c;
     color: white;
     border: none;
     border-radius: 5px;
@@ -38,7 +44,7 @@ body {
   }
   
   button:hover {
-    background: #3a7bd5;
+    background: #ff7eb3;
   }
   
   button:disabled {
