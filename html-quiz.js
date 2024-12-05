@@ -90,7 +90,6 @@ function nextQuestion() {
 
   currentQuestionIndex++;
 
-
   if (currentQuestionIndex < questions.length) {
     loadQuestion();
     nextBtn.disabled = true;
@@ -100,10 +99,15 @@ function nextQuestion() {
 }
 
 function showResult() {
+  localStorage.setItem("htmlQuizScore", score);
   questionContainer.innerHTML = `
     <h2>Your Quiz Result</h2>
     <p>You scored ${score} out of ${questions.length}!</p>
-    <p>${score >= 7 ? "Great job! You passed the quiz!" : "Keep practicing to improve!"}</p>
+    <p>${
+      score >= 7
+        ? "Great job! You passed the quiz!"
+        : "Keep practicing to improve!"
+    }</p>
     <button onclick="restartQuiz()">Restart Quiz</button>
     <button onclick="goHome()">Back to Home</button>
   `;

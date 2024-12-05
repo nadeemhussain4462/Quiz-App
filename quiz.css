@@ -1,4 +1,4 @@
-body {
+/* body {
     font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #ff758c, #ff7eb3);
     color: white;
@@ -50,5 +50,48 @@ body {
   button:disabled {
     background: gray;
     cursor: not-allowed;
+  }
+   */
+
+   body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f06, #f79);
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .quiz-wrapper {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(48, 47, 49, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  h1, h2 {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin: 10px 0;
+    cursor: pointer;
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    background: #ff5722;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button:hover {
+    background: #e64a19;
   }
   
