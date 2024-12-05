@@ -5,7 +5,7 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  background: linear-gradient(135deg, #ff7eb3, #ff758c, #feae96);
+  background: linear-gradient(135deg, #a8e6a7, #403b8a, #7576ac);
   animation: gradient 6s ease infinite;
 }
 
@@ -15,6 +15,9 @@ body {
   100% { background-position: 0% 50%; }
 }
 
+span{
+  color: rgb(19, 95, 182);
+}
 .container {
   width: 350px;
   padding: 20px;
@@ -30,7 +33,7 @@ h2 {
 }
 
 input {
-  width: 100%;
+  width: 90%;
   padding: 10px;
   margin: 10px 0;
   border: 1px solid #ddd;
@@ -52,7 +55,7 @@ button {
 
 button:hover {
   transform: scale(1.05);
-  background: #feae96;
+  background: hwb(340 23% 49%);
 }
 
 .hidden {
