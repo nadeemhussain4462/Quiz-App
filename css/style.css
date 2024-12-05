@@ -5,7 +5,7 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  background: linear-gradient(135deg, #a8e6a7, #403b8a, #7576ac);
+  background: linear-gradient(135deg, #055503, #403b8a, #7576ac);
   animation: gradient 6s ease infinite;
 }
 
