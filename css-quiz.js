@@ -110,7 +110,7 @@ function nextQuestion() {
 
 function showResult() {
   localStorage.setItem("cssQuizScore", score);
-  questionContainer.innerHTML = `
+  questionContainer.innerText = `
     <h2>Your Quiz Result</h2>
     <p>You scored ${score} out of ${cssQuestions.length}!</p>
     <p>${
