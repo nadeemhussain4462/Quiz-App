@@ -2,49 +2,47 @@ const questions = [
   {
     question: "What does HTML stand for?",
     options: [
-      "HyperText Markup Language",
-      "Home Tool Markup Language",
-      "HyperLinks Text Markup Language",
-      "HighText Markup Language",
+      "<b>HyperText Markup Language</b>",
+      "<b>Home Tool Markup Language</b>",
+      "<b>HyperLinks Text Markup Language</b>",
+      "<b>HighText Markup Language</b>",
     ],
-    answer: "HyperText Markup Language",
+    answer: "<b>HyperText Markup Language</b>",
   },
   {
     question: "Which HTML element is used to define the title of a document?",
-    options: ["meta", "title", "head", "h1"],
-    answer: "<title>",
+    options: ["&lt;meta&gt;", "&lt;title&gt;", "&lt;head&gt;", "&lt;h1&gt;"],
+    answer: "&lt;title&gt;",
   },
   {
     question: "What is the correct HTML element for inserting a line break?",
-    options: ["lb", "br", "break", "line"],
-    answer: "<br>",
+    options: ["&lt;lb&gt;", "&lt;br&gt;", "&lt;break&gt;", "&lt;line&gt;"],
+    answer: "&lt;br&gt;",
   },
   {
-    question:
-      "Which attribute specifies a unique identifier for an HTML element?",
+    question: "Which attribute specifies a unique identifier for an HTML element?",
     options: ["class", "id", "name", "style"],
     answer: "id",
   },
   {
     question: "Which HTML tag is used to display a horizontal line?",
-    options: ["hr", "line", "hline", "border"],
-    answer: "<hr>",
+    options: ["&lt;hr&gt;", "&lt;line&gt;", "&lt;hline&gt;", "&lt;border&gt;"],
+    answer: "&lt;hr&gt;",
   },
   {
-    question:
-      "Which attribute is used to specify an image's alternative text in HTML?",
+    question: "Which attribute is used to specify an image's alternative text in HTML?",
     options: ["title", "alt", "src", "description"],
     answer: "alt",
   },
   {
     question: "Which tag is used to create a table in HTML?",
-    options: ["table", "grid", "tab", "td"],
-    answer: "<table>",
+    options: ["&lt;table&gt;", "&lt;grid&gt;", "&lt;tab&gt;", "&lt;td&gt;"],
+    answer: "&lt;table&gt;",
   },
   {
     question: "What is the correct HTML element to define emphasized text?",
-    options: ["i", "italic", "em", "b"],
-    answer: "<em>",
+    options: ["&lt;i&gt;", "&lt;italic&gt;", "&lt;em&gt;", "&lt;b&gt;"],
+    answer: "&lt;em&gt;",
   },
   {
     question: "Which input type is used to create a checkbox in a form?",
@@ -53,10 +51,11 @@ const questions = [
   },
   {
     question: "Which of the following is used to specify a hyperlink in HTML?",
-    options: ["a", "link", "url", "hyperlink"],
-    answer: "<a>",
+    options: ["&lt;a&gt;", "&lt;link&gt;", "&lt;url&gt;", "&lt;hyperlink&gt;"],
+    answer: "&lt;a&gt;",
   },
 ];
+
 let currentQuestionIndex = 0;
 let score = 0;
 
@@ -66,14 +65,14 @@ const nextBtn = document.getElementById("next-btn");
 function loadQuestion() {
   const questionData = questions[currentQuestionIndex];
   questionContainer.innerHTML = `
-      <h2>${questionData.question}</h2>
-      ${questionData.options
-        .map(
-          (option, index) =>
-            `<label><input type="radio" name="option" value="${option}" onclick="enableNextButton()">${option}</label><br>`
-        )
-        .join("")}
-    `;
+    <h2>${questionData.question}</h2>
+    ${questionData.options
+      .map(
+        (option) =>
+          `<label><input type="radio" name="option" value="${option}" onclick="enableNextButton()"> ${option}</label><br>`
+      )
+      .join("")}
+  `;
 }
 
 function enableNextButton() {

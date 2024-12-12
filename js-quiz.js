@@ -81,15 +81,29 @@ const nextBtn = document.getElementById("next-btn");
 
 function loadQuestion() {
   const questionData = jsQuestions[currentQuestionIndex];
-  questionContainer.innerHTML = `
-    <h2>${questionData.question}</h2>
-    ${questionData.options
-      .map(
-        (option) =>
-          `<label><input type="radio" name="option" value="${option}" onclick="enableNextButton()">${option}</label><br>`
-      )
-      .join("")}
-  `;
+
+  // Create a new element for the question and options
+  questionContainer.innerHTML = ""; // Clear existing content
+
+  const questionElement = document.createElement("h2");
+  questionElement.textContent = questionData.question;
+  questionContainer.appendChild(questionElement);
+
+  questionData.options.forEach((option) => {
+    const label = document.createElement("label");
+    const input = document.createElement("input");
+
+    input.type = "radio";
+    input.name = "option";
+    input.value = option;
+    input.onclick = enableNextButton;
+
+    label.appendChild(input);
+    label.appendChild(document.createTextNode(option));
+
+    questionContainer.appendChild(label);
+    questionContainer.appendChild(document.createElement("br"));
+  });
 }
 
 function enableNextButton() {
@@ -115,20 +129,16 @@ function nextQuestion() {
 }
 
 function showResult() {
-  // Store the JavaScript quiz score
-  localStorage.setItem('jsQuizScore', score);
+  localStorage.setItem("jsQuizScore", score);
 
-  // Fetch scores from all quizzes
-  const htmlScore = parseInt(localStorage.getItem('htmlQuizScore')) || 0;
-  const cssScore = parseInt(localStorage.getItem('cssQuizScore')) || 0;
-  const jsScore = parseInt(localStorage.getItem('jsQuizScore')) || 0;
+  const htmlScore = parseInt(localStorage.getItem("htmlQuizScore")) || 0;
+  const cssScore = parseInt(localStorage.getItem("cssQuizScore")) || 0;
+  const jsScore = parseInt(localStorage.getItem("jsQuizScore")) || 0;
 
-  // Calculate the combined result
   const totalScore = htmlScore + cssScore + jsScore;
-  const totalQuestions = 30; // 10 questions per quiz
+  const totalQuestions = 30;
   const percentage = Math.round((totalScore / totalQuestions) * 100);
 
-  // Display the combined result
   questionContainer.innerHTML = `
     <h2>Your Combined Quiz Result</h2>
     <p><strong>HTML Quiz Score:</strong> ${htmlScore} / 10</p>
@@ -136,17 +146,18 @@ function showResult() {
     <p><strong>JavaScript Quiz Score:</strong> ${jsScore} / 10</p>
     <h3><strong>Total Score:</strong> ${totalScore} / ${totalQuestions}</h3>
     <p><strong>Percentage:</strong> ${percentage}%</p>
-    <p>${
-      percentage >= 70
-        ? "Congratulations! You passed all quizzes!"
-        : "Keep practicing to improve your skills!"
-    }</p>
+    <p>$
+      {
+        percentage >= 70
+          ? "Congratulations! You passed all quizzes!"
+          : "Keep practicing to improve your skills!"
+      }
+    </p>
     <button onclick="restartQuiz()">Restart JavaScript Quiz</button>
     <button onclick="goHome()">Back to Home</button>
   `;
   nextBtn.style.display = "none";
 }
-
 
 function restartQuiz() {
   currentQuestionIndex = 0;
